@@ -1,0 +1,25 @@
+uuid: 95ccaf03-5684-4789-9b07-8cd7eb275c19
+langcode: en
+status: true
+dependencies: {  }
+id: development
+label: development
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/development
+module:
+  admin_toolbar: 0
+  admin_toolbar_search: 0
+  admin_toolbar_tools: 0
+  devel: 0
+  devel_generate: 0
+theme: {  }
+complete_list:
+  - admin_toolbar.settings
+  - admin_toolbar_search.settings
+  - admin_toolbar_tools.settings
+  - devel.settings
+  - devel.toolbar.settings
+partial_list: {  }
