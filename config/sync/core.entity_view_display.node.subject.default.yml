@@ -1,0 +1,55 @@
+uuid: 60277a20-0c19-45fa-ad43-df4de9f44b8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.subject.body
+    - field.field.node.subject.field_assignment
+    - field.field.node.subject.field_stream
+    - field.field.node.subject.field_study_materials
+    - node.type.subject
+  module:
+    - file
+    - text
+    - user
+id: node.subject.default
+targetEntityType: node
+bundle: subject
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_assignment:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_stream:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_study_materials:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

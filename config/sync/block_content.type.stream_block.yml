@@ -1,0 +1,8 @@
+uuid: ca81df3f-b696-405a-86c5-dad95334a1b5
+langcode: en
+status: true
+dependencies: {  }
+id: stream_block
+label: 'Stream Block'
+revision: 0
+description: ''

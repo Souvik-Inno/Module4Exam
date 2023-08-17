@@ -1,0 +1,22 @@
+uuid: fd8e3630-33f2-4236-8360-f9b6233fad1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stream_block
+    - field.field.block_content.stream_block.body
+  module:
+    - text
+id: block_content.stream_block.default
+targetEntityType: block_content
+bundle: stream_block
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

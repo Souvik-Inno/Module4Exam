@@ -1,0 +1,33 @@
+uuid: f8af849b-1573-45ce-a867-f8a3f1c93565
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_joining_year
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      student: student
+      authenticated: 0
+    user_additional_register_form:
+      student: student
+      authenticated: 0
+id: user.user.field_joining_year
+field_name: field_joining_year
+entity_type: user
+bundle: user
+label: 'Joining Year'
+description: 'Enter Your Joining Year'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

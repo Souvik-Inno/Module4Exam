@@ -1,0 +1,33 @@
+uuid: a2209d11-7d5a-4120-ad84-28c872746e66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_mobile_number
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      student: student
+      authenticated: 0
+    user_additional_register_form:
+      student: student
+      authenticated: 0
+id: user.user.field_mobile_number
+field_name: field_mobile_number
+entity_type: user
+bundle: user
+label: 'Mobile Number'
+description: 'Enter Mobile Number.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,29 @@
+uuid: b8cbd2a0-c631-42c2-8c43-b8a9cba0feac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_full_name
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      student: student
+      authenticated: 0
+    user_additional_register_form:
+      student: student
+      authenticated: 0
+id: user.user.field_full_name
+field_name: field_full_name
+entity_type: user
+bundle: user
+label: 'Full Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

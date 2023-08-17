@@ -1,0 +1,36 @@
+uuid: cacb6e7f-5de8-4f30-9584-c231a2392643
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.subject.body
+    - field.field.node.subject.field_assignment
+    - field.field.node.subject.field_stream
+    - field.field.node.subject.field_study_materials
+    - node.type.subject
+  module:
+    - text
+    - user
+id: node.subject.teaser
+targetEntityType: node
+bundle: subject
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_assignment: true
+  field_stream: true
+  field_study_materials: true
