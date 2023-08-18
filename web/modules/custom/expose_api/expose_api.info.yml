@@ -1,0 +1,5 @@
+name: Expose API
+type: module
+description: Expose Student data using API.
+package: Custom module
+core_version_requirement: ^10

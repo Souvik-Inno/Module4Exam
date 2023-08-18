@@ -11,11 +11,11 @@ dependencies:
 third_party_settings:
   multiple_registration:
     user_additional_register_form_required:
+      student: student
       authenticated: 0
-      student: 0
     user_additional_register_form:
+      student: student
       authenticated: 0
-      student: 0
 id: user.user.field_stream
 field_name: field_stream
 entity_type: user

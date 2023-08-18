@@ -11,6 +11,7 @@ label: 'Academic Head'
 weight: 5
 is_admin: null
 permissions:
+  - 'access user profiles'
   - 'create assignment content'
   - 'delete own assignment content'
   - 'edit own assignment content'

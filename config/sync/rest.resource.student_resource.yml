@@ -1,0 +1,18 @@
+uuid: 984009f8-5ec0-4a8d-b5d6-9b3460d72ec8
+langcode: en
+status: true
+dependencies:
+  module:
+    - expose_api
+    - serialization
+    - user
+id: student_resource
+plugin_id: student_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

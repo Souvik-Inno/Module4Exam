@@ -1,0 +1,7 @@
+expose_api.control:
+  path: /expose/api
+  defaults:
+    _controller: \Drupal\expose_api\Controller\APIController::view
+    _title: Student Data View
+  requirements:
+    _permission: access content

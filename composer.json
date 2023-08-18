@@ -23,6 +23,9 @@
         "drupal/devel": "^5.1",
         "drupal/multiple_registration": "^3.2",
         "drupal/otp_verification": "^2.1",
+        "drupal/pager_serializer": "^1.2",
+        "drupal/rest_api_authentication": "^2.0",
+        "drupal/restui": "^1.21",
         "drupal/smtp": "^1.2"
     },
     "conflict": {

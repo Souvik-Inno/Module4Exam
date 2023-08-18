@@ -41,8 +41,11 @@ final class TopStudentsBlock extends BlockBase {
   /**
    * {@inheritDoc}
    */
-  public static function create(ContainerInterface $container, 
-  array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container,
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    Connection $connection) {
     return new static(
       $configuration,
       $plugin_id,
@@ -55,7 +58,7 @@ final class TopStudentsBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build(): array {
-    $query = $this->connection->select('users_field_data', 'u')
+    $query = $this->conn->select('users_field_data', 'u')
       ->fields('u', ['uid', 'name']);
     $query->innerJoin('user__roles', 'ur', 'ur.entity_id = u.uid');
     $query->fields('ur', ['entity_id', 'roles_target_id'])

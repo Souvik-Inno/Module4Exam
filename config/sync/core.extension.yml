@@ -16,6 +16,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  expose_api: 0
   field: 0
   field_ui: 0
   file: 0
@@ -31,9 +32,15 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  pager_serializer: 0
+  past_data: 0
   path: 0
   path_alias: 0
+  rest: 0
+  rest_api_authentication: 0
+  restui: 0
   search: 0
+  serialization: 0
   shortcut: 0
   smtp: 0
   student_register: 0
