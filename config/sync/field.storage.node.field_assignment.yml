@@ -1,0 +1,19 @@
+uuid: 3543c7dd-4eb0-46a3-a277-cecbc0e009ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_assignment
+field_name: field_assignment
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

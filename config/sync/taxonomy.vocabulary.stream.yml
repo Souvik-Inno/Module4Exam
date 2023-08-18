@@ -1,0 +1,8 @@
+uuid: 45a1deb3-36df-4a4c-a60b-b060300a7ada
+langcode: en
+status: true
+dependencies: {  }
+name: Stream
+vid: stream
+description: ''
+weight: 0

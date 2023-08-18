@@ -1,0 +1,5 @@
+name: Past Data Manage
+type: module
+description: For managing past data and deletion
+package: Custom module
+core_version_requirement: ^10

@@ -1,0 +1,18 @@
+uuid: a3bdc4d9-4620-4011-97f5-fd0a65654b49
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Subject
+type: subject
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

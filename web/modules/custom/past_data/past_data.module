@@ -1,0 +1,46 @@
+<?php
+use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_cron().
+ */
+function past_data_cron() {
+  // Delete old notices.
+  $current_time = \Drupal::time()->getRequestTime();
+  $date_output = date('Y-m-d', $current_time); 
+  $query = \Drupal::database()->select('node_field_data', 'n')
+    ->fields('n', ['nid'])
+    ->condition('n.type', 'notice')
+    ->execute()->fetchAll();
+  foreach ($query as $row) {
+    $node = Node::load($row->nid);
+    $created_time = $node->getCreatedTime();
+    $date_object = DateTimePlus::createFromTimestamp($created_time);
+    $created_time = $date_object->format('Y-m-d');
+    if ($created_time < $date_output) {
+      $node->delete();
+    }
+  }
+  // Delete students after 6 months of graduation.
+  $query = \Drupal::database()->select('users_field_data', 'u')
+      ->fields('u', ['uid', 'name']);
+  $query->innerJoin('user__roles', 'ur', 'u.uid = ur.entity_id');
+  $query->fields('ur', ['entity_id', 'roles_target_id'])
+    ->condition('ur.roles_target_id', 'student');
+  $query->innerJoin('user__field_passing_year', 'upy', 'u.uid = upy.entity_id');
+  $query->fields('upy', ['entity_id', 'field_passing_year_value']);
+  $result = $query->execute()->fetchAll();
+  foreach ($result as $row) {
+    $date_string = strval($row->field_passing_year_value) . '-01-01';
+    $date_object = DateTimePlus::createFromFormat('Y-m-d', $date_string);
+    $date_current = DateTimePlus::createFromTimestamp($current_time);
+    $modified_date = $date_current->modify('-6 months');
+    if ($date_object < $modified_date) {
+      $student = User::load($row->uid);
+      $student->delete();
+    }
+  }
+
+}

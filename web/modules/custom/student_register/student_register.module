@@ -1,0 +1,44 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+function student_register_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'general_mail':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('General mail: @subject', ['@subject' => $params['subject']], $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+function student_register_form_user_register_form_alter(&$form, FormStateInterface $form_state) {
+  $form['actions']['submit']['#submit'][] = 'send_custom_mail';
+}
+
+function send_custom_mail($form, FormStateInterface $form_state) {
+  // dump($account);
+  $account = \Drupal::currentUser();
+  if ($account->hasRole('student')) {
+    $id = strval($account->id());
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'student_register';
+    $key = 'general_mail';
+    $to = "souvikbanerjee73@gmail.com";
+    $params['message'] = "Your account ID is " . $id;
+    $params['subject'] = "Account information";
+    $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    $send = true;
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    if ($result['result'] !== true) {
+      \Drupal::messenger()->addMessage(t('Message Not Sent'));
+      // drupal_set_message(t('There was a problem sending your message and it was not sent.'), 'error');
+    }
+    else {
+      \Drupal::messenger()->addMessage(t('Message Sent'));
+    }
+  }
+}

@@ -1,0 +1,17 @@
+uuid: f629a189-94f5-4961-9da5-24a27a156a35
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.assignment
+  module:
+    - node
+id: academic_head
+label: 'Academic Head'
+weight: 5
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'create assignment content'
+  - 'delete own assignment content'
+  - 'edit own assignment content'

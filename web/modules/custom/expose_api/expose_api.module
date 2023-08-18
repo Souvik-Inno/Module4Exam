@@ -1,0 +1,14 @@
+<?php
+
+/**
+ *  Implements hook_theme().
+ */
+function expose_api_theme($existing, $type, $theme, $path) {
+  return [
+    'student' => [
+      'variables' => [
+        'content' => '',  
+      ]
+    ]
+  ];
+}

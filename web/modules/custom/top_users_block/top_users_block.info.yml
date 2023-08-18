@@ -1,0 +1,5 @@
+name: Users Block
+type: module
+description: For Top 5 Users.
+package: Custom module
+core_version_requirement: ^10

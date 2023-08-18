@@ -1,0 +1,24 @@
+uuid: 2a1bba20-6247-4656-9f48-cbfc199eb105
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignment
+    - node.type.subject
+  module:
+    - text
+id: node.subject.field_assignment
+field_name: field_assignment
+entity_type: node
+bundle: subject
+label: Assignment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

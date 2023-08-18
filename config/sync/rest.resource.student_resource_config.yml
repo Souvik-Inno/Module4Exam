@@ -1,0 +1,19 @@
+uuid: a8d31117-d6d8-4c7c-ac3c-4114084186a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - expose_api
+    - serialization
+    - user
+_core:
+  default_config_hash: ZM4Z6ifQM1srOGucZpN_mtJ271pxA9iiA9RVMc1twgA
+id: student_resource_config
+plugin_id: student_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie
